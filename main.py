@@ -49,7 +49,7 @@ def desensitize_user_name(user):
 
 # 获取北京时间
 def get_beijing_time():
-    target_timezone = pytz.timezone('Asia/Shanghai')
+    target_timezone = pytz.timezone('Europe/Berlin')
     # 获取当前时间
     return datetime.now().astimezone(target_timezone)
 
