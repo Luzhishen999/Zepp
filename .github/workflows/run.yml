@@ -2,7 +2,7 @@ name: 刷步数
 
 on:
   schedule:
-    - cron: '35 1,4,7,10,12,14,23 * * *'
+    - cron: '39 1,4,7,10,12,23 * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,9 +26,8 @@ jobs:
           
       - name: 开始
         env:
-          USER: ${{ secrets.USER }}
-          PWD: ${{ secrets.PASSWORD }}
-          STEP: ${{ secrets.STEP }}
+            CONFIG: ${{ secrets.CONFIG }}
+            AES_KEY: ${{ secrets.AES_KEY }}
         run: |
           pip3 install requests pytz pycryptodome
           python3 main.py
