@@ -26,8 +26,9 @@ jobs:
           
       - name: 开始
         env:
-            CONFIG: ${{ secrets.CONFIG }}
-            AES_KEY: ${{ secrets.AES_KEY }}
+          USER: ${{ secrets.USER }}
+          PWD: ${{ secrets.PASSWORD }}
+          STEP: ${{ secrets.STEP }}
         run: |
           pip3 install requests pytz pycryptodome
           python3 main.py
